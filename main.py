@@ -1,4 +1,5 @@
-i  = 0
-while i <= 1000000:
-    print(i)
-    i += 1
+from car import Car 
+
+myCar = Car("dssdf", 324, "sdfkl")
+
+myCar.drive()
