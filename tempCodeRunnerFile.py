@@ -1,1 +1,1 @@
-34
+print_slot_machine
