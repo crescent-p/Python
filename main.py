@@ -84,8 +84,6 @@ def check_winnings(columns, lines, bet):
 
 
 def main():
-    columns = get_slot_machine_spin(ROWS, COLS, symbol_count)
-    print_slot_machine(columns)
     balance = deposit()
     while True:
         lines = get_number_of_lines()
@@ -97,7 +95,16 @@ def main():
             break
     print(f"Hello user ! You are currently betting ${bet_amount} on {lines} lines for a total of ${lines*bet_amount}. Your current balance is ${balance}")
 
+    #spinning the machine and getting the output.
+    columns = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    #printing the output to the console.
+    print_slot_machine(columns)
+
+    #checking if there is an actual WIN.
     winnings, winning_lines = check_winnings(columns, lines, bet_amount)
+
+
+    #Calculating win or loss.
     if(winnings > bet_amount*lines):
         print(f"Congrats You just won ${winnings} on lines ", end="")
         for i, line in enumerate(winning_lines):
@@ -108,6 +115,4 @@ def main():
     else:
         print(f"Oh no you just lost ${bet_amount*lines - winnings} !")
     
-
-
 main()

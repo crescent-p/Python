@@ -1,1 +1,0 @@
-print_slot_machine
